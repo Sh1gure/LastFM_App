@@ -1,0 +1,91 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    compileSdk sdk_compile_version
+
+    defaultConfig {
+        applicationId "$app_application_Id"
+        minSdk sdk_min_version
+        targetSdk sdk_target_version
+        versionCode app_version_code
+        versionName "$app_version_name"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+}
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(':core:common')
+    implementation project(':core:data_base')
+    implementation project(':core:network')
+
+    implementation "androidx.core:core-ktx:$app_core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$lib_material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$lib_constraint_layout_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lib_lifecycle_common_java8"
+    testImplementation "junit:junit:$lib_junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$lib_ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$lib_espresso_core_version"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lib_lifecycle_viewmodel_ktx_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lib_lifecycle_viewmodel_ktx_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lib_lifecycle_extensions_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$lib_coroutines_core_version"
+
+    implementation "io.insert-koin:koin-android:$lib_koin_version"
+
+    implementation "androidx.room:room-runtime:$lib_room_version"
+    kapt "androidx.room:room-compiler:$lib_room_version"
+    implementation "androidx.room:room-ktx:$lib_room_version"
+
+    api "com.google.code.gson:gson:$lib_gson_version"
+
+    // OkHttp
+    api "com.squareup.okhttp3:okhttp:$lib_okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$lib_logging_interceptor"
+
+    // Retrofit
+    api "com.squareup.retrofit2:retrofit:$lib_retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$lib_retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$lib_retrofit_coroutines_version"
+
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$lib_recyclerview_version"
+
+    implementation "com.github.bumptech.glide:glide:$lib_glide_version"
+
+    //Navigation Components
+    implementation "androidx.navigation:navigation-fragment-ktx:$lib_navigation_component_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$lib_navigation_component_version"
+
+}

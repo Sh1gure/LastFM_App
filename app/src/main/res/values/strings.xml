@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">LastFM_API</string>
+
+    <string name="error_unknown">Unknown error ;(</string>
+
+    <string name="play_count">Play count: %1$s</string>
+    <string name="main_placeholder">No saved albums</string>
+    <string name="search_field_hint">Enter an artist name</string>
+    <string name="listeners_count">listeners: %1$s</string>
+    <string name="placeholder_nothing">Nothing</string>
+    <string name="cd_navigate_home">Navigate home</string>
+    <string name="cd_navigate_search">Navigate search</string>
+    <string name="cd_album_cover">album cover</string>
+    <string name="cd_album_title">album title</string>
+    <string name="cd_artist_name">Artist name</string>
+    <string name="no_songs_placeholder">No songs</string>
+</resources>
